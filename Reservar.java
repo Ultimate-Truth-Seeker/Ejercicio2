@@ -7,7 +7,7 @@ public class Reservar {
         do {
         System.out.println("Ingrese el número de habitaciones disponibles:");
         total = s.nextInt();
-        } while (total < 0);
+        } while (total < 3);
         Room[] rooms = new Room[total];
         for (int x = 0; x < total; x++){
             rooms[x] = new Room();
@@ -50,8 +50,8 @@ public class Reservar {
                 System.out.println("Ingrese los datos del cliente");
                 Client client = new Client();
                 System.out.println("Nombre: ");
-                client.setName(s.nextLine());
                 s.nextLine();
+                client.setName(s.nextLine());
                 System.out.println("Cantidad de personas que reserva: ");
                 client.setNumber(s.nextInt());
                 System.out.println("Veces visitadas previamente: ");
@@ -61,7 +61,6 @@ public class Reservar {
                     clients[y] = waitlClient[y];
                 }
                 clients[tclients - 1] = client;
-                System.out.println(client.getName());
                 waitlClient = new Client[tclients];
                 waitlClient = clients;
                 System.out.println("Clientes en línea de espera:");
@@ -95,6 +94,9 @@ public class Reservar {
                 break;
                 case 3:
                 System.out.println("Ingrese el número de habitación a liberar: ");
+                for (Room rm : rooms){
+                    System.out.println(""+rm.getNum());
+                }
                 int nn = s.nextInt();
                 for (Room rm : rooms){
                     if (rm.getNum() == nn){

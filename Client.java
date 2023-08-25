@@ -5,7 +5,7 @@ public class Client {
     private boolean assigned; // Añadido para facilitar la implementación
     
     public Client() {
-        assigned = false;
+        this.assigned = false;
     }
     public boolean isAssigned() {
         return assigned;
