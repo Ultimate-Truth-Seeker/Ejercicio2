@@ -2,8 +2,16 @@ public class Client {
     private int number;
     private int frecuency;
     private String name;
+    private boolean assigned; // Añadido para facilitar la implementación
+    
     public Client() {
-        
+        assigned = false;
+    }
+    public boolean isAssigned() {
+        return assigned;
+    }
+    public void setAssigned(boolean assigned) {
+        this.assigned = assigned;
     }
     public int getNumber() {
         return number;
